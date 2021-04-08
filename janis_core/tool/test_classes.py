@@ -36,6 +36,7 @@ class TTestExpectedOutput(object):
         file_diff_source: Optional[str] = None,
         array_index: Optional[int] = None,
         suffix_secondary_file: Optional[str] = None,
+        additional_paras: Optional[Dict] = None, # xinzhel
     ):
         """
 
@@ -77,6 +78,8 @@ class TTestExpectedOutput(object):
 
         # if the compared object is a file, we can add suffix to test secondary files of this file
         self.suffix = suffix_secondary_file
+
+        self.additional_paras = additional_paras # xinzhel
 
         self._validate_input()
 

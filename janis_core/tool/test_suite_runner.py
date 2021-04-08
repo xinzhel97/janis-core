@@ -172,7 +172,7 @@ class ToolTestSuiteRunner:
         # Convert the output value to a format that we want to apply our test (e.g. md5, file content, etc)
         # Use a user-provided preprocessor or our predefined list of preprocessors
         if callable(test_logic.preprocessor):
-            return test_logic.preprocessor(output_value)
+            return test_logic.preprocessor(output_value, **test_logic.additional_paras)
         else:
             return self._apply_preprocessor(
                 test_logic=test_logic,
