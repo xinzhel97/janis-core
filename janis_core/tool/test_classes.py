@@ -36,7 +36,7 @@ class TTestExpectedOutput(object):
         file_diff_source: Optional[str] = None,
         array_index: Optional[int] = None,
         suffix_secondary_file: Optional[str] = None,
-        additional_paras: Optional[Dict] = None, # xinzhel
+        additional_paras: Optional[Dict] = {},
     ):
         """
 
@@ -56,6 +56,8 @@ class TTestExpectedOutput(object):
         :type array_index: Optional[int]
         :param suffix_secondary_file: additional file
         :type suffix_secondary_file: Optional[str]
+        :param additional_paras: additional parameters for preprocessors
+        :type additional_paras: Optional[Dict]
         """
         self.tag = tag
         self.preprocessor = preprocessor
@@ -79,7 +81,7 @@ class TTestExpectedOutput(object):
         # if the compared object is a file, we can add suffix to test secondary files of this file
         self.suffix = suffix_secondary_file
 
-        self.additional_paras = additional_paras # xinzhel
+        self.additional_paras = additional_paras
 
         self._validate_input()
 
